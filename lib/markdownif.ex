@@ -1,18 +1,18 @@
 defmodule Markdownif do
   @moduledoc """
-  Documentation for Markdownif.
+  Markdown utilities
   """
+
+  use Rustler, otp_app: :markdownif, crate: :markdownif
+
+
 
   @doc """
-  Hello world.
+  Converts Markdown into HTML
 
-  ## Examples
-
-      iex> Markdownif.hello()
-      :world
-
+      iex> Markdownif.to_html "__This is markdown"
+      "<p><strong>This is markdown</strong></p>"
   """
-  def hello do
-    :world
-  end
+  @spec to_html(String.t) :: String.t
+  def to_html(_string), do: exit(:nif_not_loaded_error)
 end
