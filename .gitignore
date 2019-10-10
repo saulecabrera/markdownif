@@ -22,3 +22,10 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 markdownif-*.tar
 
+.DS_Store
+.elixir_ls/
+
+native/markdown/Cargo.lock
+/native/markdown/target
+/priv/native/*.so
+
