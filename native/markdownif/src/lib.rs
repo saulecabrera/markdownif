@@ -1,19 +1,18 @@
-extern crate markdown;
+mod atoms;
+mod md;
 
-use rustler::{Encoder, Env, Error, Term};
+use rustler::{Env, Term};
 
 rustler::rustler_export_nifs! {
     "Elixir.Markdownif",
     [
-        ("to_html", 1, to_html)
+        ("to_html", 1, md::to_html),
+        ("tokenize", 1, md::tokenize)
     ],
-    None
+    Some(on_load)
 }
 
-fn to_html<'a>(env: Env<'a>, args: &[Term]) -> Result<Term<'a>, Error>  {
-    args[0]
-        .decode()
-        .and_then(|arg: String| {
-            Ok(markdown::to_html(&arg).encode(env))
-        })
+fn on_load(_env: Env, _info: Term) -> bool {
+    true
 }
+
