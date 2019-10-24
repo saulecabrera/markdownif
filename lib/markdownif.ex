@@ -10,7 +10,7 @@ defmodule Markdownif do
   @doc"""
   Converts Markdown into HTML
 
-      iex> Markdownif.to_html "__This is markdown"
+      iex> Markdownif.to_html "__This is markdown__"
       "<p><strong>This is markdown</strong></p>"
   """
   @spec to_html(String.t) :: String.t
