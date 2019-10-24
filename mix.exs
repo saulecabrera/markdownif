@@ -22,6 +22,7 @@ defmodule Markdownif.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.21.0"},
+      {:benchee, "~> 1.0", only: :dev},
     ]
   end
 

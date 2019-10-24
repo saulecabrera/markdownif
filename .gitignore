@@ -29,3 +29,6 @@ native/markdown/Cargo.lock
 /native/markdown/target
 /priv/native/*.so
 
+/bench/snapshots/*
+/bench/graphs/**/*
+
