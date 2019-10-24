@@ -15,9 +15,4 @@ defmodule Markdownif do
   """
   @spec to_html(String.t) :: String.t
   def to_html(_string), do: exit(:nif_not_loaded_error)
-
-  @doc"""
-  Tokenizes a markdown input
-  """
-  def tokenize(_string), do: exit(:nif_not_loaded_error)
 end

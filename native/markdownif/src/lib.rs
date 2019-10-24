@@ -7,7 +7,6 @@ rustler::rustler_export_nifs! {
     "Elixir.Markdownif",
     [
         ("to_html", 1, md::to_html),
-        ("tokenize", 1, md::tokenize)
     ],
     Some(on_load)
 }
