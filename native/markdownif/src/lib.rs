@@ -6,7 +6,7 @@ use rustler::{Env, Term};
 rustler::rustler_export_nifs! {
     "Elixir.Markdownif",
     [
-        ("to_html", 1, md::to_html),
+        ("to_html", 2, md::to_html),
     ],
     Some(on_load)
 }
