@@ -107,7 +107,7 @@ inMenu: true
 
 Benchee.run(
   %{
-    "Markdownif.to_html/1" => fn -> Markdownif.to_html(input) end,
+    "Markdownif.to_html/1" => fn -> Markdownif.to_html(input, %Markdownif.Features{}) end,
   },
   time: 10
 )
