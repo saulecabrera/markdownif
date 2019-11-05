@@ -15,5 +15,5 @@ defmodule Markdownif do
   """
   # TODO: Make features optional
   @spec to_html(String.t, Features.t) :: String.t
-  def to_html(_string, _features), do: exit(:nif_not_loaded_error)
+  def to_html(_string, _features), do: :erlang.nif_error(:nif_not_loaded)
 end
