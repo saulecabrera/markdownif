@@ -1,4 +1,3 @@
-use crate::atoms;
 use rustler::{Env, Error, Term, Encoder, NifStruct};
 use pulldown_cmark::{Parser, Options, html};
 
@@ -11,7 +10,7 @@ struct Features {
     pub tasklists: bool,
 }
 
-pub fn to_html<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, Error>  {
+pub fn parse<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, Error>  {
     let input: &str = args[0].decode()?;
     let features: Features = args[1].decode()?;
 
