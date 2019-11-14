@@ -3,7 +3,7 @@ defmodule Markdownif do
   Markdown NIFs
   """
 
-  @chunk_size 2000000
+  @chunk_size 40000
 
   alias Markdownif.Features
 
@@ -28,6 +28,9 @@ defmodule Markdownif do
   # NIF interface
   # Do not call any of these functions directly, always use
   # Markdownif.to_html/2
+
+  # If the runtime system doesn't support dirty schedulers
+  # the NIF would not be loaded
 
   def parse(_string, _features), do: :erlang.nif_error(:nif_not_loaded)
   def parse_dirty(_string, _features), do: :erlang.nif_error(:nif_not_loaded)
