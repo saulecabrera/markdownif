@@ -15,11 +15,12 @@ defmodule Markdownif do
       iex> Markdownif.to_html "__This is markdown__"
       "<p><strong>This is markdown</strong></p>"
   """
-  @spec to_html(String.t, Features.t) :: String.t
+  @spec to_html(String.t(), Features.t()) :: String.t()
   def to_html(input, features \\ %Features{}) do
     cond do
       byte_size(input) > @chunk_size ->
         parse_dirty(input, features)
+
       true ->
         parse(input, features)
     end
