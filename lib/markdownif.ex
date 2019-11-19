@@ -3,7 +3,7 @@ defmodule Markdownif do
   Markdown NIFs
   """
 
-  @chunk_size 40000
+  @chunk_size 2048
 
   alias Markdownif.Features
 
