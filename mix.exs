@@ -1,15 +1,20 @@
 defmodule Markdownif.MixProject do
   use Mix.Project
 
+  @version "0.9.0"
+
   def project do
     [
       app: :markdownif,
-      version: "0.9.0",
-      elixir: "~> 1.8",
+      name: "Markdownif",
+      version: @version,
+      elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      compilers: [:rustler] ++ Mix.compilers,
+      compilers: [:rustler] ++ Mix.compilers(),
       rustler_crates: crates(),
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      description: description()
     ]
   end
 
@@ -22,7 +27,7 @@ defmodule Markdownif.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.21.0"},
-      {:benchee, "~> 1.0", only: :dev},
+      {:benchee, "~> 1.0", only: :dev}
     ]
   end
 
@@ -30,8 +35,20 @@ defmodule Markdownif.MixProject do
     [
       markdownif: [
         path: "native/markdownif",
-        features: [],
+        features: []
       ]
     ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Saúl Cabrera"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/saulecabrera/markdownif"}
+    ]
+  end
+
+  defp description do
+    "Markdown NIFs built on top of pulldown-cmark using Rustler"
   end
 end
