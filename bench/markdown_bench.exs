@@ -6,11 +6,23 @@ chunk_size = 2049
 
 Benchee.run(
   %{
-    "Markdownif.to_html/1: #{input_size}" => fn ->
-      Markdownif.to_html(input, %Markdownif.Features{})
+    "Markdownif.to_html/1: #{input_size} bytes" => fn ->
+      Markdownif.to_html(input)
     end,
     "Markdownif.to_html/1: #{chunk_size} bytes" => fn ->
-      Markdownif.to_html(chunk, %Markdownif.Features{})
+      Markdownif.to_html(chunk)
+    end,
+    "Markdown.to_html/1 #{input_size} bytes" => fn ->
+      Markdown.to_html(input)
+    end,
+    "Markdown.to_html/1 #{chunk_size} bytes" => fn ->
+      Markdown.to_html(chunk)
+    end,
+    "Earmark.as_html!/1 #{input_size} bytes" => fn ->
+      Earmark.as_html!(input)
+    end,
+    "Earmark.as_html!/1 #{chunk_size} bytes" => fn ->
+      Earmark.as_html!(chunk)
     end
   },
   time: 10

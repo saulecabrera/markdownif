@@ -27,7 +27,9 @@ defmodule Markdownif.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.21.0"},
-      {:benchee, "~> 1.0", only: :dev}
+      {:benchee, "~> 1.0", only: :dev},
+      {:markdown, git: "git://github.com/devinus/markdown.git", only: :dev},
+      {:earmark, "~> 1.4.3", only: :dev}
     ]
   end
 
