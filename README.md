@@ -14,6 +14,11 @@ In your `deps` add:
 {:markdownif, "~> 0.9.0"}
 ```
 
+## Features
+
+- Fast
+- Safe: the bindings are written in Rust using [Rustler](https://github.com/rusterlium/rustler)
+
 ## Usage
 
 This library implements bindings for [pulldown-cmark](https://github.com/raphlinus/pulldown-cmark) which is a pull parser for [CommonMark](https://commonmark.org/).
