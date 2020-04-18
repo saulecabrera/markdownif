@@ -27,7 +27,8 @@ defmodule Markdownif.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.21.0"},
-      {:benchee, "~> 1.0", only: :dev}
+      {:benchee, "~> 1.0", only: :dev},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
 
@@ -42,7 +43,7 @@ defmodule Markdownif.MixProject do
 
   defp package do
     [
-      maintainers: ["Saúl Cabrera"],
+      maintainers: ["Saúl Cabrera <saulecabrera@gmail.com>"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/saulecabrera/markdownif"}
     ]
