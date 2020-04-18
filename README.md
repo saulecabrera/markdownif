@@ -14,6 +14,10 @@ In your `deps` add:
 {:markdownif, "~> 0.9.0"}
 ```
 
+## Requirements
+
+Markdownif requires Elixir 1.7+ and OTP 21+
+
 ## Features
 
 - Fast
