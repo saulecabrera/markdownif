@@ -16,7 +16,8 @@ In your `deps` add:
 
 ## Requirements
 
-Markdownif requires Elixir 1.7+ and OTP 21+
+- Markdownif requires Elixir 1.7+ and OTP 21+
+- pulldown-cmark requires Rust 1.34+
 
 ## Features
 
